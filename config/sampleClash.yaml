@@ -240,11 +240,11 @@ proxy-providers:
 
   # 此处只是订阅示例，如果没有订阅链接的使用需求，此处及 proxy-groups 的相关内容可删除
 
-  DuckDuckGoList: #「冲鸭机场」订阅
+   DuckDuckGoList: #「冲鸭机场」订阅
     type: http
-    url: "https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/ProxyList/List.yaml" # 放机场订阅链接
+    url: "https://raw.githubusercontent.com/King-stark/Proxies/main/config/heroku" # 放机场订阅链接
     interval: 3600
-    path: ./Proxy/List.yaml # 注意此处文件名不可相同
+    path: ./Proxy/heroku.yaml # 注意此处文件名不可相同
     health-check:
       enable: true
       interval: 600
