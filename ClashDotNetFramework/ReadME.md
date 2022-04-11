@@ -5,7 +5,7 @@
 
 * 这是什么软件？
 
-一个美丽的图形客户端.与CFW类似，是方便用户在电脑中通过图形界面使用Clash内核。目前仅有Windows版本，使用的[实验性Clash内核](https://github.com/ClashDotNetFramework/experimental-clash), 可以替换使用[闭源Clash内核](https://github.com/Dreamacro/clash/releases/tag/premium)，需要用户手动更换内核文件(参考#4)。
+一个美丽的图形客户端.与CFW类似，是方便用户在电脑中通过图形界面使用Clash内核。目前仅有Windows版本，使用的[实验性Clash内核](https://github.com/ClashDotNetFramework/experimental-clash), 可以替换使用[闭源Clash内核](https://github.com/Dreamacro/clash/releases/tag/premium)，需要用户手动更换内核文件(参考#2)。
 
 该软件与CFW相比，内存占用更低，界面可能更迎合部分人的审美。
 ### 安装：
