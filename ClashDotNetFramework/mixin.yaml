@@ -1,3 +1,4 @@
+# 本文档为多方参考后用在Clash.NET中
 mixin:
   dns:
     enable: true
