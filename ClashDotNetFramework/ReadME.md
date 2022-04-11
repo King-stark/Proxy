@@ -34,6 +34,9 @@
 
 下载最新的 wintun.dll 复制到Clash内核所在文件夹内  访问 https://www.wintun.net
 
+>***具体详细的关于clash premium核心的Tun功能介绍与使用方式参考[@ClashParsersLearningStart的文章](https://telegra.ph/Clash-Mixin-TunTap-in-CFWCDN-05-03)***
+
+
 * 3.配置文件夹
 默认（xxxx.setup.exe）位于C:/user/用户名/.config/cdn，便携模式（xxx.7z）为软件目录内的/data文件夹。
 
