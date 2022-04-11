@@ -1,0 +1,85 @@
+# 本文档为最初参考神机配置用在CFW中
+mixin: # object
+   dns:
+     enable: true
+     #lisen: 0.0.0.0:53
+     #ipv6: false # when false, response to AAAA questions will be empty
+     # These nameservers are used to resolve the DNS nameserver hostnames below.
+     # Specify IP addresses only
+     default-nameserver:
+       - 114.114.114.114
+       - 119.29.29.29
+       - 223.5.5.5
+       - 1.0.0.1
+     enhanced-mode: redir-host # 或 fake-ip
+     # fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
+
+     # Hostnames in this list will not be resolved with fake IPs
+     # i.e. questions to these domain names will always be answered with their
+     # real IP addresses
+     # fake-ip-filter:
+     #  - '*.lan'
+     #  - localhost.ptlogin2.qq.com
+     #  - '+.srv.nintendo.net'
+     #  - '+.stun.playstation.net'
+     #  - '+.msftconnecttest.com'
+     #  - '+.msftncsi.com'
+     #  - '+.xboxlive.com'
+     #  - 'msftconnecttest.com'
+     #  - 'xbox.*.microsoft.com'
+     #   - '*.battlenet.com.cn'
+     #   - '*.battlenet.com'
+     #   - '*.blzstatic.cn'
+     #   - '*.battle.net'
+
+     # Supports UDP, TCP, DoT, DoH. You can specify the port to connect to.
+     # All DNS questions are sent directly to the nameserver, without proxies
+     # involved. Clash answers the DNS question with the first result gathered.
+     nameserver:
+       - 180.76.76.76
+       - tls://223.5.5.5:853
+       - https://dns.pub/dns-query
+       - https://dns.alidns.com/dns-query
+
+     # When `fallback` is present, the DNS server will send concurrent requests
+     # to the servers in this section along with servers in `nameservers`.
+     # The answers from fallback servers are used when the GEOIP country
+     # is not `CN`.
+     fallback: #if https-dns not working,try (DOT)tls://
+       - https://cloudflare-dns.com/dns-query
+       - https://1.0.0.1/dns-query  #tls://1.0.0.1:853
+       - https://public.dns.iij.jp/dns-query
+       - https://dns.google/dns-query #tls://8.8.4.4:853
+     # If IP addresses resolved with servers in `nameservers` are in the specified
+     # subnets below, they are considered invalid and results from `fallback`
+     # servers are used instead.
+    
+     # IP address resolved with servers in `nameserver` is used when
+     # `fallback-filter.geoip` is true and when GEOIP of the IP address is `CN`.
+    
+     # If `fallback-filter.geoip` is false, results from `fallback` nameservers
+     # are always used, and answers from `nameservers` are discarded.
+    
+     # This is a countermeasure against DNS pollution attacks.
+     fallback-filter:
+       geoip: true
+       ipcidr:
+         - 240.0.0.0/4
+         - 0.0.0.0/32
+         - 127.0.0.1/32
+       domain:
+         - +.google.com
+         - +.facebook.com
+         - +.youtube.com
+         - +.xn--ngstr-lra8j.com
+         - +.google.cn
+         - +.googleapis.cn
+   tun:
+     enable: true
+     stack: gvisor # or system
+     dns-hijack:
+       - 198.18.0.2:53
+       # - 8.8.8.8:53
+       # - tcp://8.8.8.8:53
+     auto-route: true # auto set global route
+     auto-detect-interface: true # conflict with interface-name
