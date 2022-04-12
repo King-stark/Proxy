@@ -26,6 +26,7 @@ mixin:
       #- https://1.1.1.1/dns-query # cloudflare
     fallback-filter:
       geoip: true
+      geoip-code: CN
       ip-cidr:
         - 240.0.0.0/4
         - 127.0.0.1/8
@@ -66,7 +67,7 @@ mixin:
       #- tls://dns.rubyfish.cn:853 # DNS over TLS
       #- https://1.1.1.1/dns-query # DNS over HTTPS
       - https://doh.pub/dns-query # DNSPod
-      #- https://dns.alidns.com/dns-query # AliDNS
+      - https://dns.alidns.com/dns-query # AliDNS
       - dhcp://en0 # dns from dhcp
     fallback:
       #- tls://185.222.222.222
@@ -76,9 +77,10 @@ mixin:
       - https://cloudflare-dns.com/dns-query #Cloudflare DNS
       #- https://doh.dns.sb/dns-query #DNS.SB
       #- https://dns-unfiltered.adguard.com/dns-query #AdguardDNS
-      #- https://doh.opendns.com/dns-query #OpenDNS
+      - https://doh.opendns.com/dns-query #OpenDNS
     fallback-filter:
       geoip: true
+      geoip-code: CN
       ip-cidr:
         - 240.0.0.0/4
         - 127.0.0.1/8
@@ -190,6 +192,7 @@ mixin:
     # This is a countermeasure against DNS pollution attacks.
     fallback-filter:
       geoip: true
+      geoip-code: CN
       ip-cidr:
         - 240.0.0.0/4
         - 127.0.0.1/8
